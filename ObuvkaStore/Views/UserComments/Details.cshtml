@@ -1,0 +1,50 @@
+﻿@model ObuvkaStore.Models.EntityModels.UserComments
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>UserComments</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.idProduct)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.idProduct)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.idCustomer)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.idCustomer)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.comments)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.comments)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

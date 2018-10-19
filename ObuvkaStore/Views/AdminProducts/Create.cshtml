@@ -1,0 +1,184 @@
+﻿@model ObuvkaStore.Models.ViewModels.AdminProducts
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<hr />
+<h4 class="text-center">Добавление нового товара</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.picture, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.picture[0], new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.picture[0], "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.picture, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.picture[1], new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.picture[1], "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.picture, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.picture[2], new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.picture[2], "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div id="piC"> </div>
+        <p><a class="btn btn-link col-md-offset-2" id="addLINK">Добавить еще поле</a></p>
+        <div class="form-group">
+            @Html.LabelFor(model => model.price, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-2">
+                @Html.EditorFor(model => model.price, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.price, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.idColor, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.DropDownListFor(model => model.idColor, ViewBag.colors as SelectList, "Выберите цвет", new { @class = "btn btn-default dropdown-toggle" })
+                @Html.ValidationMessageFor(model => model.idColor, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Size, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-2">
+                @Html.EditorFor(model => model.Size[0], new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Size, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.quantity, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-2">
+                @Html.EditorFor(model => model.quantity[0], new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.quantity, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div id="SizeQuant"></div>
+        <a class="btn btn-link col-md-offset-2" id="addSizeQuant">Добавить еще поле</a>
+        <div class="form-group">
+            @Html.LabelFor(model => model.availability, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.availability)
+                    @Html.ValidationMessageFor(model => model.availability, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.idForWhom, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.DropDownListFor(model => model.idForWhom, ViewBag.forWhom as SelectList, "Выберите для кого", new { @class = "btn btn-default dropdown-toggle" })
+                @Html.ValidationMessageFor(model => model.idForWhom, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.idCategory, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.DropDownListFor(model => model.idCategory, ViewBag.category as SelectList, "Выберите категорию", new { @class = "btn btn-default dropdown-toggle" })
+                @Html.ValidationMessageFor(model => model.idCategory, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.idProducer, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.DropDownListFor(model => model.idProducer, ViewBag.producer as SelectList, "Выберите производителя", new { @class = "btn btn-default dropdown-toggle" })
+                @Html.ValidationMessageFor(model => model.idProducer, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.idSeason, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.DropDownListFor(model => model.idSeason, ViewBag.season as SelectList, "Выберите сезон", new { @class = "btn btn-default dropdown-toggle" })
+                @Html.ValidationMessageFor(model => model.idSeason, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.idMatherial, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.DropDownListFor(model => model.idMatherial, ViewBag.matherial as SelectList, "Выберите материал", new { @class = "btn btn-default dropdown-toggle" })
+                @Html.ValidationMessageFor(model => model.idMatherial, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.description, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.TextAreaFor(model => model.description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-6">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            var i = 2;
+            $('#addLINK').click(function () {
+                i++;
+                var Add = `<div class='form-group'>
+                        <label class='control-label col-md-2' for='picture'>Картинка</label>
+                        <div class='col-md-6'>
+                        <input class='form-control text-box single-line' id='picture_${i}_' name='picture[${i}]' type='text' value='' />
+                        <span class='field-validation-valid text-danger' data-valmsg-for='picture[${i}]' data-valmsg-replace='true'></span>
+                        </div></div>`;
+                $('#piC').append(Add);
+            })
+            var j = 0;
+            $('#addSizeQuant').click(function () {
+                j++;
+                var Add = `<div class="form-group">
+            <label class="control-label col-md-2" for="Size">Размер</label>
+            <div class="col-md-2">
+                <input class="form-control text-box single-line" data-val="true" data-val-number="Значением поля Double должно быть число." data-val-required="Требуется поле Double." id="Size_${j}_" name="Size[${j}]" type="text" value="" />
+                <span class="field-validation-valid text-danger" data-valmsg-for="Size" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="quantity">Количество</label>
+            <div class="col-md-2">
+                <input class="form-control text-box single-line" data-val="true" data-val-number="Значением поля Int32 должно быть число." data-val-required="Требуется поле Int32." id="quantity_${j}_" name="quantity[${j}]" type="number" value="" />
+                <span class="field-validation-valid text-danger" data-valmsg-for="quantity" data-valmsg-replace="true"></span>
+            </div>
+        </div>`;
+                $('#SizeQuant').append(Add);
+            })
+        })
+    </script>
+}
+
+    <div class="col-md-offset-2">
+        @Html.ActionLink("Вернуться к списку товаров", "Index")
+    </div>

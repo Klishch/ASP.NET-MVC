@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ObuvkaStore.Models.EntityModels.Colors>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.color_ua)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.color_ru)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.color_eng)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.color_ua)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.color_ru)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.color_eng)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

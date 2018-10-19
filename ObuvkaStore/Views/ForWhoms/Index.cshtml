@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ObuvkaStore.Models.EntityModels.ForWhoms>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.whom_ua)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.whom_ru)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.whom_eng)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.whom_ua)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.whom_ru)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.whom_eng)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

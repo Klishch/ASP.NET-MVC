@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="banner-box">
+        <div class="row">
+            <div class="col-sm-4 col-xs-12 centered" style="padding-right: 5px;">
+                <div class="image-box">
+                    <a href="/womens-shoes/" class="image-hover-effect">
+                        <img src="~/Content/images/womens_shoes.png" class="img-responsive" alt="Женская обувь" title="Женская обувь">
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4 col-xs-12 centered" style="padding-right: 5px; padding-left: 5px;">
+                <div class="image-box">
+                    <a href='@Url.Action("Index","Shoes")' class="image-hover-effect">
+                        <img src="~/Content/images/childrens_shoes.png" class="img-responsive" alt="Детская обувь" title="Детская обувь">
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4 col-xs-12 centered" style="padding-left: 5px;">
+                <div class="image-box">
+                    <a href="/mens-shoes/" class="image-hover-effect">
+                        <img src="~/Content/images/mens_shoes.png" class="img-responsive" alt="Мужская обувь" title="Мужская обувь">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

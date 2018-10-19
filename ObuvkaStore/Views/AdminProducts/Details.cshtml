@@ -1,0 +1,125 @@
+﻿@model ObuvkaStore.Models.ViewModels.AdminProducts
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Детально</h3>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.picture)
+        </dt>
+        <dd>
+            @foreach (var pic in Model.picture)
+            {
+                @Html.DisplayFor(modelItem => pic)
+                <br />
+            }
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Size)
+        </dt>
+        <dd>
+            @foreach (var s in Model.Size)
+            {
+                @Html.DisplayFor(modelItem => s)
+                <br />
+            }
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.quantity)
+        </dt>
+        <dd>
+            @foreach (var q in Model.quantity)
+            {
+                @Html.DisplayFor(modelItem => q)
+                <br />
+            }
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.color)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.color)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.availability)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.availability)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.forWhom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.forWhom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.producer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.producer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.season)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.season)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.matherial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.matherial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Редактировать", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Назад к списку", "Index")
+</p>

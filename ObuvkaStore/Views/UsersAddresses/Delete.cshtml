@@ -1,0 +1,88 @@
+﻿@model ObuvkaStore.Models.EntityModels.UsersAddress
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>UsersAddress</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.country)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.country)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.region)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.region)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.city)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.city)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.street)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.street)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.homeNumb)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.homeNumb)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.flatNumb)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.flatNumb)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.zipCode)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.zipCode)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

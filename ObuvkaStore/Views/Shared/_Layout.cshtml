@@ -1,0 +1,286 @@
+﻿<html>
+<head>
+    <title></title>
+    <meta content="text/html; charset=UTF-8">
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Styles.Render("~/Content/css")
+
+    @*<script type="application/x-javascript">
+
+            addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+        </script>*@
+    <!--fonts-->
+    @*<link href='http://fonts.googleapis.com/css?family=Amaranth:400,700' rel='stylesheet' type='text/css'>*@
+    <!--//fonts-->
+
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+    <script>$(document).ready(function () { $(".megamenu").megamenu(); });</script>
+
+</head>
+<body>
+    <!--header-->
+        <div class="top-head">
+            <div class="container">
+                <ul class="header-in">
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Гарантия</a></li>
+                    <li><a href="#">Оплата, доставка, обмен и возврат</a> </li>
+                    <li><a href="#">Контакты</a></li>
+                    <li><a href="https://novaposhta.ua/ru/tracking">Отследить посылку</a></li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    <div class="container">
+        <header>
+            <div class="row hidden-sm hidden-md">
+                <div class="col-sm-3 col-md-3"> </div>
+                <div class="col-sm-4 col-md-4 header_logo">
+                    <a href='@Url.Action("Index", "Home")'>
+                        <img src="~/Content/images/Obuvka.ua3.png" alt="Obuvka.ua">
+                    </a>
+                    @*<script>$("span.ui-slider-handle").swipe({ swipeLeft: leftSwipe, swipeRight: rightSwipe, threshold: 0 }); function leftSwipe(event) { } function rightSwipe(event) { }</script>*@
+                </div>
+                <noindex>
+                    <div class="col-sm-2 col-md-2">
+                        <ul class="social text-right">
+                            <li>
+                                <a href="https://www.facebook.com/" target="_blank" rel="nofollow">
+                                    <img src="data:image/webp;base64,UklGRhACAABXRUJQVlA4TAMCAAAvJ8AJEO/COJIUKA1432+TMP/4MAhGbSQ5jrpn9nJ8H4lj1EaS46h7Zi/H95E4hm3bOM4Rwn3vbzZtmyTtrDsAdTH6Y0aYsWLgxIywYkUYCCt2zDjwYyC8PxAGBkIIcwMbgB1hNCISWSUS0zyrbpHIKtXteV/7cZiXxbptqlskqtuyrrJKVtn23bKu9uPwfp+sMs2z7/+d12WcJtu+yyrDGCJxnKesEonzukTCAEEA2EJS17ZtnzV7tm2l/3/IzCY9PCCJ6P8EqH8+mKv2FlfXlvq1QvgnUm1rEzntZlyGEv1N8jhpwl2xNg1Oq16Sv7NpeBAi+AebxudCKHdn8weHPkxl80friIRF2T29vjzfm8XpWf1N4t2XBg1niAWPU2qTeAtaQAuG805twta7FgER1MghaBGOQOTteJ+3MRyz5TaJJyDyuEkt2aokDfJAatp6NBHagm0RdfXKH1rkk5kPUOsuxbyKugENGkSD/t5EWx7FvEaY/ULwKuYl1MUTP2uQD+Z73IZLMfdRzHyiRR42qYuKmWu/oWUr0EBoZVt4SgETcRt3KdrARDlmSCKkopNr/FMrXidOTgkglKyaXcUBqamQ3gFm51BkFzUfwHBoDkFejih8aGhqPqqovrqZRkAZTC/QlrPKrDs/ws0Vvcp8rNRcWLdkY7Fdjqsfd3m8LvWHAQA=" alt="Вконтакте" data-pagespeed-url-hash="977576654" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/" target="_blank" rel="nofollow">
+                                    <img src="data:image/webp;base64,UklGRsoBAABXRUJQVlA4TL4BAAAvJ8AJEJ9CkG1Tf+39DhEK27ZtUwGhzjS8jeTb2IBAuPggV+AAYkVCQiAJEJJISAAJtrWnbfQpjpoyMzMzc8MMjr79r0a/f6mdWUBE/ycA//mJzduf1mDQLt5vT/6CWfsYUum+N3KR5ooMri7HSE4dY97YoNEvRi6OB4wWGb02rkq++IslqzmlmFaK6vJA4J1iznnupIBAuz/0uJphivRPEHFXqCfSGv20ELBXrX4j6XrclD6ECgLPyQ7wKZSFiaFQDDkT3gVOe5uMs/Fwf6nY826DZo+O55GZ8er9ZOVGRwvAgSN5BoyMjuay6l4ra5Z8xoyjv4xrciUrNQAGqgMcUrzCtsrZoH0cSzfYCmurHjEvreFClRoARVV/DKfenbFtVQMA7lV8Mli+vlkzuKTqzdvW8aEAAPaKugNv0unYu9reumgzYMbDt1DGtKBexIdQNcK6MLDmK6ScN21hB2Ku6nEfuYUV9WIeW/SbVsKSMNxNEGi2UmED2Tce2f18V3+0KL5AaYtC5NqoBuO1eM0p6MdLsWpTCLV3cV5GEXG1HtbcQNxks6yr7uQRf3rvtZ46lzbeDmYMfttYa/APAw==" alt="Инстаграм" data-pagespeed-url-hash="1496339578" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://t.me/" target="_blank" rel="nofollow">
+                                    <img src="data:image/webp;base64,UklGRooCAABXRUJQVlA4TH0CAAAvJ8AJEM/jIJIkRarqnuMH/3JZg8O2jRw5J9m+9NFh20aOnJNsX/rIuJEkp+nSeYOHABB/1LZtw8BTTXkDAASgAAswgA8IwAEE4AJ+YAFeIAAJSEABEvAAAViABgSVSpWEStXWZ1ISSahUqu26qJJIQjWbJJbj0JYqifU8LcchifU8qa73m2o2KtXxPNpaz9NsZqNaz1Nbx/NoK4m2knj+/2ajUqnaams2banaSiKJ2cxmNqokluOwHIe2Pge9Pviwz92vB/5CZZBo25YhSe6yq17btm0P2jbGrYiqdv/+ZEQkVn/AuxH9d+A2kiJVFpqW7nr6EXmfnKJAKJZKcyqGQJGLSL4vkiEDmYiPHe4lcbIlXuLEKggaKowFXGC7F0bJIVxotyfIMQnzVqDZDk1jMkiuYNODMu6U0Z+THydnlPYv96oPzVfld2Y1z55IrKjv4FMVcRApH1m7lYCYUl8jrPaSfb5j8ULi/kyw7NHSRZYCNpHqyd0HwfJq96fgfxWkErAUMlp9X35JwXx7uPVHMO+RRshSjDQaZ44lAIjzzZ0bCWCJNGKWUlDo+najWPi7v7Z3J4FsbkxX0lIaCvO3giXzw+nG2sG9ZQGtutJGoW7s62/5Y2eNj0QWOTzydamNUjBQNbG+tn6axf/IEz9vkY0TMwmVX9f3c6qFlwWyKQkZhbn1wdWsYr1imGxuFDBraL2vffz6Ba9v/NJEOgEH/dLwvbu9tmX7jd/5nAC9X5z032JnDaFs/umdvxFg7j/2mdVWpdxp4PJjmnR8rtZH/ajyotr68Gi9FXu3fr2bB57NF8/mlWfzz5t5WuzNfA772OW8T6Y5qc37zwwDAA==" alt="Google+" data-pagespeed-url-hash="866518167" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </noindex>
+                <div id="right-block">
+                    <div id="login">
+                        <a href='@Url.Action("Login","Account")' class="register" id="modaltrigger"><span class="top-panel-div-span">Войти</span></a>
+                    </div>
+                    <div class="cart box_1">
+                        <a href="checkout.html">
+                            <h3>
+                                <div class="total">
+                                    <span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)
+                                </div>
+                                <img src="~/Content/images/cart.png" alt="" />
+                            </h3>
+                        </a>
+                        <p><a href="javascript:;" class="simpleCart_empty"><img src="images/cart-c.png" alt=""></a></p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="header-top">
+            <div class="head-top">
+                <div class="top-nav">
+                    <ul class="megamenu skyblue">
+                        <li class="active grid">
+                            <a href="#">Женская обувь</a>
+                            <div class="megapanel">
+                                <div class="row">
+                                    <div class="col1">
+                                        <div class="h_nav">
+                                            <ul>
+                                                <li><a href="#">Ботинки</a></li>
+                                                <li><a href="#">Туфли</a></li>
+                                                <li><a href="#">Ботильоны</a></li>
+                                                <li><a href="#">Сапоги</a></li>
+                                                <li><a href="#">Кеды</a></li>
+                                                <li><a href="#">Кроссовки</a></li>
+                                                <li><a href="#">Босоножки</a></li>
+                                                <li><a href="#">Балетки</a></li>
+                                                <li><a href="#">Сандалии</a></li>
+                                                <li><a href="#">Шлепанцы</a></li>
+                                                <li><a href="#">Сабо</a></li>
+                                                <li><a href="#">Слипоны</a></li>
+                                                <li><a href="#">Мокасины</a></li>
+                                                <li><a href="#">Эспадрильи</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">Мужская обувь</a>
+                            <div class="megapanel">
+                                <div class="row">
+                                    <div class="col1">
+                                        <div class="h_nav">
+                                            <ul>
+                                                <li><a href="#">Ботинки</a></li>
+                                                <li><a href="#">Туфли</a></li>
+                                                <li><a href="#">Кеды</a></li>
+                                                <li><a href="#">Кроссовки</a></li>
+                                                <li><a href="#">Мокасины</a></li>
+                                                <li><a href="#">Шлепанцы</a></li>
+                                                <li><a href="#">Сандалии</a></li>
+                                                <li><a href="#">Слипоны</a></li>
+                                                <li><a href="#">Большие размеры</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="grid">
+                            <a href='@Url.Action("Index","Shoes")'>Детская обувь</a>
+                            <div class="megapanel">
+                                <div class="row">
+                                    <div class="col1">
+                                        <div class="h_nav">
+                                            <ul>
+                                                <li><a href="#">Кеды</a></li>
+                                                <li><a href="#">Туфли</a></li>
+                                                <li><a href="#">Кроссовки</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">Средства ухода</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="search-top">
+                    <div class="search">
+                        <form>
+                            <input type="text" value="Поиск... ?" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Поиск... ?';}">
+                            <input type="submit" value="">
+                        </form>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <!--banner-->
+
+
+        @RenderBody()
+        <!---->
+
+        <div class="content-bottom">
+            <div class="col-md-8 latter">
+                <h6>NEWSLETTER</h6>
+                <p>sign up now to our newsletter discount! to get the Welcome discount</p>
+
+                <div class="clearfix"> </div>
+            </div>
+            <div class="col-md-4 latter-right">
+
+                <form>
+                    <div class="join">
+                        <input type="text" value="your email here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'your email here';}">
+                        <i> </i>
+                    </div>
+                    <input type="submit" value="join us">
+                </form>
+
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+
+        <!---->
+        <div class="bottom-content">
+
+            <div class="col-md-4">
+                <img src="images/ad1.png" class="img-responsive" alt="">
+            </div>
+            <div class="col-md-4">
+                <img src="images/ad1.png" class="img-responsive" alt="">
+            </div>
+            <div class="col-md-4">
+                <img src="images/ad1.png" class="img-responsive" alt="">
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+
+
+    <!--footer-->
+    <div class="footer">
+        <div class="container">
+            <div class="col-md-3 footer-left">
+                <a href="index.html"><img src="images/logo.png" alt=""></a>
+                <p class="footer-class">© 2015 Markito All Rights Reserved | Template by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+            </div>
+            <div class="col-md-2 footer-middle">
+                <ul>
+                    <li><a href="404.html">about us</a> </li>
+                    <li><a href="contact.html">   contact us</a></li>
+                    <li><a href="products.html">  our stores</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 footer-left-in">
+                <ul class="term">
+                    <li><a href="#">terms and conditions</a> </li>
+                    <li><a href="#">  markito in the press</a></li>
+                    <li><a href="#">  testimonials</a></li>
+                </ul>
+                <ul class="term">
+                    <li><a href="#">join us</a> </li>
+                    <li><a href="#">  markito videos</a></li>
+
+                </ul>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="col-md-3 footer-right">
+                <h5>WE SUPPORT</h5>
+                <ul>
+                    <li><a href="#"><i> </i></a> </li>
+                    <li><a href="#"><i class="we"> </i></a></li>
+                    <li><a href="#"><i class="we-in"> </i></a></li>
+                    <li><a href="#"><i class="we-at"> </i></a></li>
+                    <li><a href="#"><i class="we-at-at"> </i></a></li>
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                /*
+                var defaults = {
+                        containerID: 'toTop', // fading element id
+                    containerHoverID: 'toTopHover', // fading element hover id
+                    scrollSpeed: 1200,
+                    easingType: 'linear'
+                    };
+                */
+
+                $().UItoTop({ easingType: 'easeOutQuart' });
+
+            });
+        </script>
+        <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Styles.Render("~/Content/css")
+</body>
+</html>

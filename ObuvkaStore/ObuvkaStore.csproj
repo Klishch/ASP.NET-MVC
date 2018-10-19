@@ -1,0 +1,1633 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AA12F21E-0B29-46F0-BBEB-FFE5F064E79A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ObuvkaStore</RootNamespace>
+    <AssemblyName>ObuvkaStore</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.0.0\lib\net451\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.0.0\lib\net451\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.0\lib\net451\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.0\lib\net451\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.5.1\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.5.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.5.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.5.1\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.5.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.5.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminProductsController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ShoesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\PageingHelpers.cs" />
+    <Compile Include="Migrations\201810091736274_ProblemWithPictures.cs" />
+    <Compile Include="Migrations\201810091736274_ProblemWithPictures.Designer.cs">
+      <DependentUpon>201810091736274_ProblemWithPictures.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810091745088_SecondProblemWithPictures.cs" />
+    <Compile Include="Migrations\201810091745088_SecondProblemWithPictures.Designer.cs">
+      <DependentUpon>201810091745088_SecondProblemWithPictures.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810120740359_ChangeContext.cs" />
+    <Compile Include="Migrations\201810120740359_ChangeContext.Designer.cs">
+      <DependentUpon>201810120740359_ChangeContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810121842347_ChangeViewModel-id-Name.cs" />
+    <Compile Include="Migrations\201810121842347_ChangeViewModel-id-Name.Designer.cs">
+      <DependentUpon>201810121842347_ChangeViewModel-id-Name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810122146065_Add-id-forTable-ProductSizes.cs" />
+    <Compile Include="Migrations\201810122146065_Add-id-forTable-ProductSizes.Designer.cs">
+      <DependentUpon>201810122146065_Add-id-forTable-ProductSizes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810140819049_141018.cs" />
+    <Compile Include="Migrations\201810140819049_141018.Designer.cs">
+      <DependentUpon>201810140819049_141018.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810141715385_RemoveOnUpdateOnDelete.cs" />
+    <Compile Include="Migrations\201810141715385_RemoveOnUpdateOnDelete.Designer.cs">
+      <DependentUpon>201810141715385_RemoveOnUpdateOnDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810142117188_Change_DB_Rows_UA_Eng.cs" />
+    <Compile Include="Migrations\201810142117188_Change_DB_Rows_UA_Eng.Designer.cs">
+      <DependentUpon>201810142117188_Change_DB_Rows_UA_Eng.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810142153390_ChangeTableDBAddProdInfoinProducts.cs" />
+    <Compile Include="Migrations\201810142153390_ChangeTableDBAddProdInfoinProducts.Designer.cs">
+      <DependentUpon>201810142153390_ChangeTableDBAddProdInfoinProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810142210458_ChangeTableProd.cs" />
+    <Compile Include="Migrations\201810142210458_ChangeTableProd.Designer.cs">
+      <DependentUpon>201810142210458_ChangeTableProd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810142225302_ProductInfoId.cs" />
+    <Compile Include="Migrations\201810142225302_ProductInfoId.Designer.cs">
+      <DependentUpon>201810142225302_ProductInfoId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810142235435_DeleteIdProductInfoFromProduct.cs" />
+    <Compile Include="Migrations\201810142235435_DeleteIdProductInfoFromProduct.Designer.cs">
+      <DependentUpon>201810142235435_DeleteIdProductInfoFromProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810142311582_SetIdentityTableProduct.cs" />
+    <Compile Include="Migrations\201810142311582_SetIdentityTableProduct.Designer.cs">
+      <DependentUpon>201810142311582_SetIdentityTableProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810151015093_DatabaseGeneratedOptionNone.cs" />
+    <Compile Include="Migrations\201810151015093_DatabaseGeneratedOptionNone.Designer.cs">
+      <DependentUpon>201810151015093_DatabaseGeneratedOptionNone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810151024267_ChangesINObuvkaContext.cs" />
+    <Compile Include="Migrations\201810151024267_ChangesINObuvkaContext.Designer.cs">
+      <DependentUpon>201810151024267_ChangesINObuvkaContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810151032434_ChangesSeasons.cs" />
+    <Compile Include="Migrations\201810151032434_ChangesSeasons.Designer.cs">
+      <DependentUpon>201810151032434_ChangesSeasons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810161314105_161018.cs" />
+    <Compile Include="Migrations\201810161314105_161018.Designer.cs">
+      <DependentUpon>201810161314105_161018.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810161533111_54454545.cs" />
+    <Compile Include="Migrations\201810161533111_54454545.Designer.cs">
+      <DependentUpon>201810161533111_54454545.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810161723128_542112.cs" />
+    <Compile Include="Migrations\201810161723128_542112.Designer.cs">
+      <DependentUpon>201810161723128_542112.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\EntityModels\Categories.cs" />
+    <Compile Include="Models\EntityModels\Colors.cs" />
+    <Compile Include="Models\EntityModels\Customers.cs" />
+    <Compile Include="Models\EntityModels\C__MigrationHistory.cs" />
+    <Compile Include="Models\EntityModels\ForWhoms.cs" />
+    <Compile Include="Models\EntityModels\Matherials.cs" />
+    <Compile Include="Models\EntityModels\ObuvkaContext.cs" />
+    <Compile Include="Models\EntityModels\OrderProducts.cs" />
+    <Compile Include="Models\EntityModels\Orders.cs" />
+    <Compile Include="Models\EntityModels\Producers.cs" />
+    <Compile Include="Models\EntityModels\Products.cs" />
+    <Compile Include="Models\EntityModels\ProductsDescriptions.cs" />
+    <Compile Include="Models\EntityModels\ProductsInfo.cs" />
+    <Compile Include="Models\EntityModels\ProductSizes.cs" />
+    <Compile Include="Models\EntityModels\ProductsPictures.cs" />
+    <Compile Include="Models\EntityModels\Seasons.cs" />
+    <Compile Include="Models\EntityModels\UserComments.cs" />
+    <Compile Include="Models\EntityModels\UsersAddress.cs" />
+    <Compile Include="Models\EntityModels\UsersInfo.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Pageing\IndexViewModel.cs" />
+    <Compile Include="Models\Pageing\PageInfo.cs" />
+    <Compile Include="Models\ViewModels\AdminProducts.cs" />
+    <Compile Include="Models\ViewModels\Shoes.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\MainRepo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\ObuvkaShopDb.mdf" />
+    <Content Include="App_Data\ObuvkaShopDb_log.ldf">
+      <DependentUpon>ObuvkaShopDb.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\etalage.css" />
+    <Content Include="Content\images\11.png" />
+    <Content Include="Content\images\ad1.png" />
+    <Content Include="Content\images\ba.png" />
+    <Content Include="Content\images\ba11.png" />
+    <Content Include="Content\images\ba12.png" />
+    <Content Include="Content\images\ba2.png" />
+    <Content Include="Content\images\ba21.png" />
+    <Content Include="Content\images\ba22.png" />
+    <Content Include="Content\images\cart-c.png" />
+    <Content Include="Content\images\cart.png" />
+    <Content Include="Content\images\childrens_shoes.png" />
+    <Content Include="Content\images\close_1.png" />
+    <Content Include="Content\images\de.jpg" />
+    <Content Include="Content\images\de1.jpg" />
+    <Content Include="Content\images\de2.jpg" />
+    <Content Include="Content\images\de3.jpg" />
+    <Content Include="Content\images\de4.jpg" />
+    <Content Include="Content\images\de5.jpg" />
+    <Content Include="Content\images\fa.jpg" />
+    <Content Include="Content\images\fa1.jpg" />
+    <Content Include="Content\images\fa2.jpg" />
+    <Content Include="Content\images\fa3.jpg" />
+    <Content Include="Content\images\fa4.jpg" />
+    <Content Include="Content\images\fa5.jpg" />
+    <Content Include="Content\images\fa6.jpg" />
+    <Content Include="Content\images\fa7.jpg" />
+    <Content Include="Content\images\fa8.jpg" />
+    <Content Include="Content\images\he.jpg" />
+    <Content Include="Content\images\he1.jpg" />
+    <Content Include="Content\images\he2.jpg" />
+    <Content Include="Content\images\he3.jpg" />
+    <Content Include="Content\images\he4.jpg" />
+    <Content Include="Content\images\he5.jpg" />
+    <Content Include="Content\images\img-sprite.png" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\mens_shoes.png" />
+    <Content Include="Content\images\mes.png" />
+    <Content Include="Content\images\ni.jpg" />
+    <Content Include="Content\images\ni1.jpg" />
+    <Content Include="Content\images\Obuvka.ua.png" />
+    <Content Include="Content\images\Obuvka.ua2.png" />
+    <Content Include="Content\images\Obuvka.ua3.png" />
+    <Content Include="Content\images\ph.jpg" />
+    <Content Include="Content\images\ph1.jpg" />
+    <Content Include="Content\images\ph2.jpg" />
+    <Content Include="Content\images\ph3.jpg" />
+    <Content Include="Content\images\ph4.jpg" />
+    <Content Include="Content\images\ph5.jpg" />
+    <Content Include="Content\images\ph6.jpg" />
+    <Content Include="Content\images\ph7.jpg" />
+    <Content Include="Content\images\pi.jpg" />
+    <Content Include="Content\images\pi11.jpg" />
+    <Content Include="Content\images\pi12.jpg" />
+    <Content Include="Content\images\pi13.jpg" />
+    <Content Include="Content\images\pic1.jpg" />
+    <Content Include="Content\images\pic2.jpg" />
+    <Content Include="Content\images\s1.jpg" />
+    <Content Include="Content\images\s2.jpg" />
+    <Content Include="Content\images\s3.jpg" />
+    <Content Include="Content\images\s4.jpg" />
+    <Content Include="Content\images\si.jpg" />
+    <Content Include="Content\images\si1.jpg" />
+    <Content Include="Content\images\si2.jpg" />
+    <Content Include="Content\images\si3.jpg" />
+    <Content Include="Content\images\up.png" />
+    <Content Include="Content\images\womens_shoes.png" />
+    <Content Include="Content\images\zoom.png" />
+    <Content Include="Content\megamenu.css" />
+    <Content Include="Content\owl.carousel.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\Pictures\Children\1857-1.jpg" />
+    <Content Include="Content\Pictures\Children\1857-3.jpg" />
+    <Content Include="Content\Pictures\Children\3301-2.jpg" />
+    <Content Include="Content\Pictures\Children\3301-4.jpg" />
+    <Content Include="Content\Pictures\Children\5879-1.jpg" />
+    <Content Include="Content\Pictures\Children\5879-3.jpg" />
+    <Content Include="Content\Pictures\Children\7166-2-18-1.jpg" />
+    <Content Include="Content\Pictures\Children\7166-2-18-3.jpg" />
+    <Content Include="Content\Pictures\Children\allshoes-639-3-pink-1.jpg" />
+    <Content Include="Content\Pictures\Children\allshoes-639-3-pink-3.jpg" />
+    <Content Include="Content\Pictures\Children\baby-boom-38c-1.jpg" />
+    <Content Include="Content\Pictures\Children\baby-boom-38c-3.jpg" />
+    <Content Include="Content\Pictures\Children\baletka-sinyaya-2.jpg" />
+    <Content Include="Content\Pictures\Children\baletka-sinyaya-5.jpg" />
+    <Content Include="Content\Pictures\Children\Bashili-0019-1.jpg" />
+    <Content Include="Content\Pictures\Children\Bashili-0019-3.jpg" />
+    <Content Include="Content\Pictures\Children\bashili189.3.jpg" />
+    <Content Include="Content\Pictures\Children\bashili189.jpg" />
+    <Content Include="Content\Pictures\Children\belie-snikersy-7.jpg" />
+    <Content Include="Content\Pictures\Children\c1-0030-16-1.jpg" />
+    <Content Include="Content\Pictures\Children\c1-0030-16-2.jpg" />
+    <Content Include="Content\Pictures\Children\c1-0049-16-3.jpg" />
+    <Content Include="Content\Pictures\Children\c1-0049-16-4.jpg" />
+    <Content Include="Content\Pictures\Children\c1-0050-16-1.jpg" />
+    <Content Include="Content\Pictures\Children\c1-0050-16-2.jpg" />
+    <Content Include="Content\Pictures\Children\Caloria-NS-05-1.jpg" />
+    <Content Include="Content\Pictures\Children\Calorie-NS-01-1.jpg" />
+    <Content Include="Content\Pictures\Children\Calorie-NS-01-3.jpg" />
+    <Content Include="Content\Pictures\Children\Calorie-NS-05-3.jpg" />
+    <Content Include="Content\Pictures\Children\demar40-10.2.jpg" />
+    <Content Include="Content\Pictures\Children\demar40-10.jpg" />
+    <Content Include="Content\Pictures\Children\frivolif01-1-123.jpg" />
+    <Content Include="Content\Pictures\Children\frivolif01-1-123_3.jpg" />
+    <Content Include="Content\Pictures\Children\IMG_2916.jpg" />
+    <Content Include="Content\Pictures\Children\IMG_2920.jpg" />
+    <Content Include="Content\Pictures\Children\Jong-golf-1227-10-1.jpg" />
+    <Content Include="Content\Pictures\Children\Jong-golf-1227-10-3.jpg" />
+    <Content Include="Content\Pictures\Children\Jong-golf-1228-7-1.jpg" />
+    <Content Include="Content\Pictures\Children\Jong-golf-1228-7-3.jpg" />
+    <Content Include="Content\Pictures\Children\kedi-crosby-1.jpg" />
+    <Content Include="Content\Pictures\Children\kedi-crosby-4.jpg" />
+    <Content Include="Content\Pictures\Children\s-5080-0-1.jpg" />
+    <Content Include="Content\Pictures\Children\s-5080-0-2.jpg" />
+    <Content Include="Content\Pictures\Children\s1-0047-16-2.jpg" />
+    <Content Include="Content\Pictures\Children\s1-0047-16.jpg" />
+    <Content Include="Content\Pictures\Children\solnce78-41.2.jpg" />
+    <Content Include="Content\Pictures\Children\solnce78-41.jpg" />
+    <Content Include="Content\Pictures\Children\sopra325-53.2.jpg" />
+    <Content Include="Content\Pictures\Children\sopra325-53.jpg" />
+    <Content Include="Content\Pictures\Children\Tom-01-16-1.jpg" />
+    <Content Include="Content\Pictures\Children\Tom-01-16-3.jpg" />
+    <Content Include="Content\Pictures\Children\Tom-57-44-1.jpg" />
+    <Content Include="Content\Pictures\Children\Tom-57-44-3.jpg" />
+    <Content Include="Content\Pictures\Children\violetta-20-173-1.jpg" />
+    <Content Include="Content\Pictures\Children\violetta-20-173-3.jpg" />
+    <Content Include="Content\Pictures\Children\w3-0048-17-1.jpg" />
+    <Content Include="Content\Pictures\Children\w3-0048-17-18.jpg" />
+    <Content Include="Content\Pictures\Children\w3-0048-17-19.jpg" />
+    <Content Include="Content\Pictures\Children\w3-0048-17-2.jpg" />
+    <Content Include="Content\Pictures\Children\w3-0048-17-3.jpg" />
+    <Content Include="Content\Pictures\Children\w3-0048-17-5.jpg" />
+    <Content Include="Content\Pictures\Children\w3-0048-18-15-1.jpg" />
+    <Content Include="Content\Pictures\Children\w3-0048-18.jpg" />
+    <Content Include="Content\Pictures\Children\w3-0048-183.jpg" />
+    <Content Include="Content\Pictures\Children\w3-0048-18a.jpg" />
+    <Content Include="Content\Pictures\Children\w3-0048-18s.jpg" />
+    <Content Include="Content\Pictures\Children\w3-0084-18.jpg" />
+    <Content Include="Content\Pictures\Children\w3-0084-181.jpg" />
+    <Content Include="Content\Pictures\Children\w3-0084-182.jpg" />
+    <Content Include="Content\Pictures\Children\w3-0084-183.jpg" />
+    <Content Include="Content\Pictures\Children\w3-0084-184.jpg" />
+    <Content Include="Content\Pictures\Children\w3-1904-184.jpg" />
+    <Content Include="Content\Pictures\Children\Waldi-60-208-1.jpg" />
+    <Content Include="Content\Pictures\Children\Waldi-60-208-3.jpg" />
+    <Content Include="Content\Pictures\Children\wonder-6-21-1.jpg" />
+    <Content Include="Content\Pictures\Children\wonder-6-21-3.jpg" />
+    <Content Include="Content\Pictures\Female\1448-25.3.jpg" />
+    <Content Include="Content\Pictures\Female\1448-25.jpg" />
+    <Content Include="Content\Pictures\Female\1602-2-3-1.jpg" />
+    <Content Include="Content\Pictures\Female\1602-2-4-1.jpg" />
+    <Content Include="Content\Pictures\Female\3117-3.jpg" />
+    <Content Include="Content\Pictures\Female\3117-6.jpg" />
+    <Content Include="Content\Pictures\Female\35-2450-5.jpg" />
+    <Content Include="Content\Pictures\Female\35-2450-8.jpg" />
+    <Content Include="Content\Pictures\Female\5825-505.3.jpg" />
+    <Content Include="Content\Pictures\Female\5825-505.jpg" />
+    <Content Include="Content\Pictures\Female\amgels8029biege.jpg" />
+    <Content Include="Content\Pictures\Female\amgels8029_3biege.jpg" />
+    <Content Include="Content\Pictures\Female\Angels-1.jpg" />
+    <Content Include="Content\Pictures\Female\Angels-3.jpg" />
+    <Content Include="Content\Pictures\Female\angels-3050-powder-1.jpg" />
+    <Content Include="Content\Pictures\Female\angels-3050-powder-3.jpg" />
+    <Content Include="Content\Pictures\Female\angels-3072-powder-2.jpg" />
+    <Content Include="Content\Pictures\Female\angels-3072-powder-5.jpg" />
+    <Content Include="Content\Pictures\Female\angels-44-red-1.jpg" />
+    <Content Include="Content\Pictures\Female\angels-44-red-4.jpg" />
+    <Content Include="Content\Pictures\Female\angels-502-35-bezhevyj-lak-1.jpg" />
+    <Content Include="Content\Pictures\Female\angels-502-35-bezhevyj-lak-4.jpg" />
+    <Content Include="Content\Pictures\Female\angels-502-35-kr.-lak-1.jpg" />
+    <Content Include="Content\Pictures\Female\angels-502-35-kr.-lak-4.jpg" />
+    <Content Include="Content\Pictures\Female\angels-8029-powder-1.jpg" />
+    <Content Include="Content\Pictures\Female\angels-8029-powder-4.jpg" />
+    <Content Include="Content\Pictures\Female\angels1905biege-7.jpg" />
+    <Content Include="Content\Pictures\Female\angels19lemon.jpg" />
+    <Content Include="Content\Pictures\Female\angels19lemon_2.jpg" />
+    <Content Include="Content\Pictures\Female\angels221-1.jpg" />
+    <Content Include="Content\Pictures\Female\angels221.1-1.jpg" />
+    <Content Include="Content\Pictures\Female\angels221.2-1.jpg" />
+    <Content Include="Content\Pictures\Female\angels221.3-1.jpg" />
+    <Content Include="Content\Pictures\Female\angels221.4-1.jpg" />
+    <Content Include="Content\Pictures\Female\angels221.5-1.jpg" />
+    <Content Include="Content\Pictures\Female\angels252-09.3.jpg" />
+    <Content Include="Content\Pictures\Female\angels252-09.jpg" />
+    <Content Include="Content\Pictures\Female\angels3056.3.jpg" />
+    <Content Include="Content\Pictures\Female\angels3056.jpg" />
+    <Content Include="Content\Pictures\Female\angels3056blue.jpg" />
+    <Content Include="Content\Pictures\Female\angels3056blue_3.jpg" />
+    <Content Include="Content\Pictures\Female\angels44powder-1.jpg" />
+    <Content Include="Content\Pictures\Female\angels44powder.3.jpg" />
+    <Content Include="Content\Pictures\Female\angels44red7.jpg" />
+    <Content Include="Content\Pictures\Female\angels501-34redvarnish.jpg" />
+    <Content Include="Content\Pictures\Female\angels501-34redvarnish_3.jpg" />
+    <Content Include="Content\Pictures\Female\angels9500.3.jpg" />
+    <Content Include="Content\Pictures\Female\broni115-032.3.jpg" />
+    <Content Include="Content\Pictures\Female\broni115-032.jpg" />
+    <Content Include="Content\Pictures\Female\dual010-248.3.jpg" />
+    <Content Include="Content\Pictures\Female\dual010-248.jpg" />
+    <Content Include="Content\Pictures\Female\dual02-6.3.jpg" />
+    <Content Include="Content\Pictures\Female\dual02-6.jpg" />
+    <Content Include="Content\Pictures\Female\evento-1009-black-1.jpg" />
+    <Content Include="Content\Pictures\Female\evento-1009-black-4.jpg" />
+    <Content Include="Content\Pictures\Female\evento-1011-1.jpg" />
+    <Content Include="Content\Pictures\Female\evento-1011-4.jpg" />
+    <Content Include="Content\Pictures\Female\fioregold182kk.3.jpg" />
+    <Content Include="Content\Pictures\Female\fioregold182kk.jpg" />
+    <Content Include="Content\Pictures\Female\Frivoli-008-1-149-2.jpg" />
+    <Content Include="Content\Pictures\Female\frivoli-01-1-63-1.jpg" />
+    <Content Include="Content\Pictures\Female\frivoli-01-1-63-4.jpg" />
+    <Content Include="Content\Pictures\Female\Frivoli-012-7-05-1.jpg" />
+    <Content Include="Content\Pictures\Female\frivoli-12-2-122-1.jpg" />
+    <Content Include="Content\Pictures\Female\frivoli-12-3-105-1.jpg" />
+    <Content Include="Content\Pictures\Female\frivoli-12-4-113-1-1.jpg" />
+    <Content Include="Content\Pictures\Female\frivoli-12-6-1131-1.jpg" />
+    <Content Include="Content\Pictures\Female\frivoli-12-6-1131-4.jpg" />
+    <Content Include="Content\Pictures\Female\Frivoli-13-3-10-1.jpg" />
+    <Content Include="Content\Pictures\Female\frivoli-20-1-121-1.jpg" />
+    <Content Include="Content\Pictures\Female\frivoli-20-1-121-4.jpg" />
+    <Content Include="Content\Pictures\Female\frivoli-20-2-105-1.jpg" />
+    <Content Include="Content\Pictures\Female\frivoli-20-2-106-1.jpg" />
+    <Content Include="Content\Pictures\Female\frivoli-20-3-129-1.jpg" />
+    <Content Include="Content\Pictures\Female\frivoli-20-5-23t-1.jpg" />
+    <Content Include="Content\Pictures\Female\frivoli-20-5-23t-4.jpg" />
+    <Content Include="Content\Pictures\Female\frivoli-20-6-105-1.jpg" />
+    <Content Include="Content\Pictures\Female\frivoli-20-6-105-4.jpg" />
+    <Content Include="Content\Pictures\Female\frivoli-2017-2.jpg" />
+    <Content Include="Content\Pictures\Female\frivoli-2017-3.jpg" />
+    <Content Include="Content\Pictures\Female\frivoli-2017-7.jpg" />
+    <Content Include="Content\Pictures\Female\frivoli-2017-78.jpg" />
+    <Content Include="Content\Pictures\Female\Frivoli-37-1-171-1.jpg" />
+    <Content Include="Content\Pictures\Female\Frivoli-37-1-172-2.jpg" />
+    <Content Include="Content\Pictures\Female\frivoli-64-1-140-1.jpg" />
+    <Content Include="Content\Pictures\Female\frivoli-f832123.jpg" />
+    <Content Include="Content\Pictures\Female\frivoli-f832123_3.jpg" />
+    <Content Include="Content\Pictures\Female\Frivoli-w3-0353-16-4.jpg" />
+    <Content Include="Content\Pictures\Female\frivoli01-2-108.jpg" />
+    <Content Include="Content\Pictures\Female\frivoli01-2-108_2.jpg" />
+    <Content Include="Content\Pictures\Female\frivoli12-1-110.3.jpg" />
+    <Content Include="Content\Pictures\Female\frivoli12-1-110.jpg" />
+    <Content Include="Content\Pictures\Female\frivoli12-2-126-1-5.jpg" />
+    <Content Include="Content\Pictures\Female\frivoli12-2-126-1.jpg" />
+    <Content Include="Content\Pictures\Female\frivoli20-2-107-1.jpg" />
+    <Content Include="Content\Pictures\Female\frivolif83-1-1255.jpg" />
+    <Content Include="Content\Pictures\Female\frivolif83-1-1255_3.jpg" />
+    <Content Include="Content\Pictures\Female\frovoli-w3-0001-17-1-1.jpg" />
+    <Content Include="Content\Pictures\Female\frovoli-w3-0001-17-2-1.jpg" />
+    <Content Include="Content\Pictures\Female\frovoli-w3-0001-17-3-1.jpg" />
+    <Content Include="Content\Pictures\Female\frovoli-w3-0001-17-4-1.jpg" />
+    <Content Include="Content\Pictures\Female\frovoli-w3-0001-17-5.jpg" />
+    <Content Include="Content\Pictures\Female\GLN-w3-0319-16-1.jpg" />
+    <Content Include="Content\Pictures\Female\GLN-w3-0319-16-5.jpg" />
+    <Content Include="Content\Pictures\Female\IMG_2986.jpg" />
+    <Content Include="Content\Pictures\Female\IMG_2989.jpg" />
+    <Content Include="Content\Pictures\Female\liici171-7.jpg" />
+    <Content Include="Content\Pictures\Female\m1-0024-17-1-1.jpg" />
+    <Content Include="Content\Pictures\Female\m1-0024-17-3.jpg" />
+    <Content Include="Content\Pictures\Female\m1-0024-17-4.jpg" />
+    <Content Include="Content\Pictures\Female\m1-0024-17-5.jpg" />
+    <Content Include="Content\Pictures\Female\m1-0024-17-6.jpg" />
+    <Content Include="Content\Pictures\Female\m2-0012-18-1.jpg" />
+    <Content Include="Content\Pictures\Female\m2-0012-18-12s.jpg" />
+    <Content Include="Content\Pictures\Female\m2-0012-18-13.jpg" />
+    <Content Include="Content\Pictures\Female\m2-0012-18-14.jpg" />
+    <Content Include="Content\Pictures\Female\m2-0012-18-15.jpg" />
+    <Content Include="Content\Pictures\Female\m2-0012-18-16ss.jpg" />
+    <Content Include="Content\Pictures\Female\marcco-1.jpg" />
+    <Content Include="Content\Pictures\Female\marcco-2.jpg" />
+    <Content Include="Content\Pictures\Female\marcco-3.jpg" />
+    <Content Include="Content\Pictures\Female\marcco-4.jpg" />
+    <Content Include="Content\Pictures\Female\marcco-5.jpg" />
+    <Content Include="Content\Pictures\Female\marcco-6.jpg" />
+    <Content Include="Content\Pictures\Female\marco_-1.jpg" />
+    <Content Include="Content\Pictures\Female\NewStyle-w3-0350-16-1.jpg" />
+    <Content Include="Content\Pictures\Female\nicolas-ladino-silva-278716.jpg" />
+    <Content Include="Content\Pictures\Female\nivelle-1544bezh-lak-1.jpg" />
+    <Content Include="Content\Pictures\Female\nivelle-1544bezh-lak-4.jpg" />
+    <Content Include="Content\Pictures\Female\nivelle-1704-1.jpg" />
+    <Content Include="Content\Pictures\Female\nivelle-1704-3.jpg" />
+    <Content Include="Content\Pictures\Female\nivellle-1599-1.jpg" />
+    <Content Include="Content\Pictures\Female\nivellle-1599-3.jpg" />
+    <Content Include="Content\Pictures\Female\olli-35-2450-zsh-5.jpg" />
+    <Content Include="Content\Pictures\Female\olli-35-2450-zsh-8.jpg" />
+    <Content Include="Content\Pictures\Female\pgv12-257.3.jpg" />
+    <Content Include="Content\Pictures\Female\pgv12-257.jpg" />
+    <Content Include="Content\Pictures\Female\ross014.2.jpg" />
+    <Content Include="Content\Pictures\Female\ross014.jpg" />
+    <Content Include="Content\Pictures\Female\ross014zh.3.jpg" />
+    <Content Include="Content\Pictures\Female\ross014zh.jpg" />
+    <Content Include="Content\Pictures\Female\ross0510-1.jpg" />
+    <Content Include="Content\Pictures\Female\ross0510.3-1.jpg" />
+    <Content Include="Content\Pictures\Female\ross0510.3zh.jpg" />
+    <Content Include="Content\Pictures\Female\ross0510zh.jpg" />
+    <Content Include="Content\Pictures\Female\ruletto195.3.jpg" />
+    <Content Include="Content\Pictures\Female\ruletto195.jpg" />
+    <Content Include="Content\Pictures\Female\shoes396.3.jpg" />
+    <Content Include="Content\Pictures\Female\shoes396.jpg" />
+    <Content Include="Content\Pictures\Female\totofamily9502.1.jpg" />
+    <Content Include="Content\Pictures\Female\totofamily9502black.2.jpg" />
+    <Content Include="Content\Pictures\Female\ulyana050.3.jpg" />
+    <Content Include="Content\Pictures\Female\ulyana050.jpg" />
+    <Content Include="Content\Pictures\Female\valex4645-1-303.3.jpg" />
+    <Content Include="Content\Pictures\Female\valex4645-1-303.jpg" />
+    <Content Include="Content\Pictures\Female\visazh251.jpg" />
+    <Content Include="Content\Pictures\Female\visazh251_3.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0024-16-1.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0053-16-3.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0060-16-4.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0063-16-1.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0063-16-2.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0063-17-1.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0063-17-2.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0063-17-3.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0063-17-4.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0070-17-1.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0070-17-2.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0070-17-3.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0070-17-5.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0070-17-6.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0072-16-2.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0075-16-2.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0075-16-3.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0076-16-8.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0077-16-2.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0077-16-4.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0078-16-3.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0078-16-4.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0079-16-3.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0080-16-4.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0081-16-4.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0082-16-2.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0089-16-8.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0096-16-3.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0096-16-4.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0098-16-1.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0099-16-1.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0100-16-1.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0104-16-3.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0106-16-2.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0106-16-7.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0116-17-1.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0116-17-2.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0116-17-3.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0116-17-4.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0121-16-1.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0121-16-11.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0124-16-1.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0124-16-7.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0126-17-1.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0126-17-2.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0126-17-3.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0126-17-4.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0126-17-5.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0132-17-1.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0132-17-2.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0132-17-3.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0132-17-4.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0133-17-1.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0133-17-2.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0133-17-3.jpg" />
+    <Content Include="Content\Pictures\Female\w1-0133-17-4.jpg" />
+    <Content Include="Content\Pictures\Female\w2-0090-16-7.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0011-17-11.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0011-17-12.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0011-17-13.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0011-17-14.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0011-17-4.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0022-17-1.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0022-17-2.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0022-17-3.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0022-17-4.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0022-17-5.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0048-17-17.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0048-17-78.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0060-18.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0060-181.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0060-182.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0060-183.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0060-184.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0085-18.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0085-181.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0085-182.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0085-184.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0085-185.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0127-16-5.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0127-16-7.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0128-16-1.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0128-16-4.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0145-16-1.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0145-16-2.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0162-16-1.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0164-16-1.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0173-16-1.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0173-16-6.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0175-16-1.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0179-16-7.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0186-16-2.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0186-16-4.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0201-16-5.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0202-16-1.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0246-16.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0253-16-7.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0255-16-7.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0257-16-7.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0278-17.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0280-16.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0320-16-7.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0320-16-8.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0344-16-8.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0345-16-8.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0346-16-8.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0348-16-8.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0349-16-8.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0350-16-8.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0353-16-8.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0355-16-1.jpg" />
+    <Content Include="Content\Pictures\Female\w3-0368-17-7.jpg" />
+    <Content Include="Content\Pictures\Female\w3-1904-18.jpg" />
+    <Content Include="Content\Pictures\Female\w3-1904-181.jpg" />
+    <Content Include="Content\Pictures\Female\w3-1904-182.jpg" />
+    <Content Include="Content\Pictures\Female\w3-1904-183.jpg" />
+    <Content Include="Content\Pictures\Male\018CNkr.3.jpg" />
+    <Content Include="Content\Pictures\Male\018CNkr.jpg" />
+    <Content Include="Content\Pictures\Male\1235-3.3.jpg" />
+    <Content Include="Content\Pictures\Male\1235-3.jpg" />
+    <Content Include="Content\Pictures\Male\300-3.3.jpg" />
+    <Content Include="Content\Pictures\Male\300-3.jpg" />
+    <Content Include="Content\Pictures\Male\325.3.jpg" />
+    <Content Include="Content\Pictures\Male\325.jpg" />
+    <Content Include="Content\Pictures\Male\399.2.jpg" />
+    <Content Include="Content\Pictures\Male\399.jpg" />
+    <Content Include="Content\Pictures\Male\4668-1-16_perfo.jpg" />
+    <Content Include="Content\Pictures\Male\4668-1-16_perfo_3.jpg" />
+    <Content Include="Content\Pictures\Male\4744-3-33.3.jpg" />
+    <Content Include="Content\Pictures\Male\4744-3-33.jpg" />
+    <Content Include="Content\Pictures\Male\50-01.3.jpg" />
+    <Content Include="Content\Pictures\Male\5399-1.jpg" />
+    <Content Include="Content\Pictures\Male\5399-2.jpg" />
+    <Content Include="Content\Pictures\Male\5399-3.jpg" />
+    <Content Include="Content\Pictures\Male\5399-4.jpg" />
+    <Content Include="Content\Pictures\Male\5399-5.jpg" />
+    <Content Include="Content\Pictures\Male\5399-6.jpg" />
+    <Content Include="Content\Pictures\Male\5399-7-33.3.jpg" />
+    <Content Include="Content\Pictures\Male\5399-7-33.jpg" />
+    <Content Include="Content\Pictures\Male\5399-7.jpg" />
+    <Content Include="Content\Pictures\Male\593-1.3.jpg" />
+    <Content Include="Content\Pictures\Male\593-1.jpg" />
+    <Content Include="Content\Pictures\Male\5956-1-36-1.jpg" />
+    <Content Include="Content\Pictures\Male\5956-1-36.3-1.jpg" />
+    <Content Include="Content\Pictures\Male\606-1.2.jpg" />
+    <Content Include="Content\Pictures\Male\606-1.5.jpg" />
+    <Content Include="Content\Pictures\Male\614.3.jpg" />
+    <Content Include="Content\Pictures\Male\9170-2-36.2.jpg" />
+    <Content Include="Content\Pictures\Male\9170-2-36.jpg" />
+    <Content Include="Content\Pictures\Male\98-1.jpg" />
+    <Content Include="Content\Pictures\Male\98-5.jpg" />
+    <Content Include="Content\Pictures\Male\artos-168.3.jpg" />
+    <Content Include="Content\Pictures\Male\artos-168.jpg" />
+    <Content Include="Content\Pictures\Male\c1-0027-16-2.jpg" />
+    <Content Include="Content\Pictures\Male\c1-0027-16-3.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo-380-10.1.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo-380-10.2.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo-380-10.3.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo-380-10.4.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo-380-10.5.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo-380-10.jpg" />
+    <Content Include="Content\Pictures\Male\CEVIVO-m3-0217-16-1.jpg" />
+    <Content Include="Content\Pictures\Male\Cevivo-m3-0232-16-2.jpg" />
+    <Content Include="Content\Pictures\Male\Cevivo-m3-0232-16-3.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo350-10.3.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo350-10.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo4310.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo4310_3.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo4333.3.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo4333.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo4671.3.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo4671.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo4690-10.1.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo4690-10.2.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo4690-10.3.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo4690-10.4.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo4690-10.5.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo4690-10.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo509-4.4.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo509-4.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo521-4.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo521-4_1.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo521-4_2.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo521-4_3.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo521-4_4.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo521-4_5.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo521-4_6.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo521-7.1.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo521-7.2.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo521-7.3.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo521-7.4.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo521-7.5.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo521-7.6.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo521-7.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo547.2.jpg" />
+    <Content Include="Content\Pictures\Male\cevivo547.jpg" />
+    <Content Include="Content\Pictures\Male\crosby-414117-03-1.jpg" />
+    <Content Include="Content\Pictures\Male\crosby-414117-03-1_1.jpg" />
+    <Content Include="Content\Pictures\Male\davis-1603-16-2.jpg" />
+    <Content Include="Content\Pictures\Male\davis-1629-21p-2.jpg" />
+    <Content Include="Content\Pictures\Male\davis-1629-21p-4.jpg" />
+    <Content Include="Content\Pictures\Male\davis1587-8_3.jpg" />
+    <Content Include="Content\Pictures\Male\detta58.jpg" />
+    <Content Include="Content\Pictures\Male\detta58_3.jpg" />
+    <Content Include="Content\Pictures\Male\detta593-2.3.jpg" />
+    <Content Include="Content\Pictures\Male\detta593-2.jpg" />
+    <Content Include="Content\Pictures\Male\detta593-3.1.jpg" />
+    <Content Include="Content\Pictures\Male\detta593-3.2.jpg" />
+    <Content Include="Content\Pictures\Male\detta593-3.3.jpg" />
+    <Content Include="Content\Pictures\Male\detta593-3.4.jpg" />
+    <Content Include="Content\Pictures\Male\detta593-3.5.jpg" />
+    <Content Include="Content\Pictures\Male\detta593-3.6.jpg" />
+    <Content Include="Content\Pictures\Male\detta593-3.jpg" />
+    <Content Include="Content\Pictures\Male\detta62-5.3.jpg" />
+    <Content Include="Content\Pictures\Male\detta62-5.jpg" />
+    <Content Include="Content\Pictures\Male\detta640-1_3.jpg" />
+    <Content Include="Content\Pictures\Male\Folla-060-MS-2.jpg" />
+    <Content Include="Content\Pictures\Male\gln-3323-3-09.3.jpg" />
+    <Content Include="Content\Pictures\Male\gln-3323-3-09.jpg" />
+    <Content Include="Content\Pictures\Male\gln-3344-6-53.1.jpg" />
+    <Content Include="Content\Pictures\Male\gln-3344-6-53.2.jpg" />
+    <Content Include="Content\Pictures\Male\gln-3344-6-53.3.jpg" />
+    <Content Include="Content\Pictures\Male\gln-3344-6-53.4.jpg" />
+    <Content Include="Content\Pictures\Male\gln-3344-6-53.5.jpg" />
+    <Content Include="Content\Pictures\Male\gln-3344-6-53.6.jpg" />
+    <Content Include="Content\Pictures\Male\gln-3344-6-53.jpg" />
+    <Content Include="Content\Pictures\Male\GLN-5279-9-10-1.jpg" />
+    <Content Include="Content\Pictures\Male\GLN-5510b-2-16-1.jpg" />
+    <Content Include="Content\Pictures\Male\gln-7166-3-36.jpg" />
+    <Content Include="Content\Pictures\Male\gln-7166-3-36_1.jpg" />
+    <Content Include="Content\Pictures\Male\gln-7166-3-36_2.jpg" />
+    <Content Include="Content\Pictures\Male\gln-7166-3-36_3.jpg" />
+    <Content Include="Content\Pictures\Male\gln-7166-3-36_4.jpg" />
+    <Content Include="Content\Pictures\Male\gln-7166-3-36_5.jpg" />
+    <Content Include="Content\Pictures\Male\gln-7166-3-36_6.jpg" />
+    <Content Include="Content\Pictures\Male\GLN-m3-0212-16-11.jpg" />
+    <Content Include="Content\Pictures\Male\GLN-m3-0212-16-7.jpg" />
+    <Content Include="Content\Pictures\Male\GLN-m3-0229-16-3.jpg" />
+    <Content Include="Content\Pictures\Male\gln1091-1-73.jpg" />
+    <Content Include="Content\Pictures\Male\gln1091-1-73_2.jpg" />
+    <Content Include="Content\Pictures\Male\gln1722-8-57.jpg" />
+    <Content Include="Content\Pictures\Male\gln1722-8-57_3.jpg" />
+    <Content Include="Content\Pictures\Male\gln3323-3-53.3.jpg" />
+    <Content Include="Content\Pictures\Male\gln3323-3-53.jpg" />
+    <Content Include="Content\Pictures\Male\gln4255-6-09.1-1.jpg" />
+    <Content Include="Content\Pictures\Male\gln4255-6-09.2.jpg" />
+    <Content Include="Content\Pictures\Male\gln4255-6-09.3.jpg" />
+    <Content Include="Content\Pictures\Male\gln4255-6-09.4.jpg" />
+    <Content Include="Content\Pictures\Male\gln4255-6-09.5.jpg" />
+    <Content Include="Content\Pictures\Male\gln4255-6-09.6-1.jpg" />
+    <Content Include="Content\Pictures\Male\gln4255-6-09.jpg" />
+    <Content Include="Content\Pictures\Male\gln4668-1-32.jpg" />
+    <Content Include="Content\Pictures\Male\gln4668-1-32_3.jpg" />
+    <Content Include="Content\Pictures\Male\gln4668-11-53.jpg" />
+    <Content Include="Content\Pictures\Male\gln4668-11-53_3.jpg" />
+    <Content Include="Content\Pictures\Male\gln4668-3-17.jpg" />
+    <Content Include="Content\Pictures\Male\gln4668-3-17_3.jpg" />
+    <Content Include="Content\Pictures\Male\gln5201-2-65.1.jpg" />
+    <Content Include="Content\Pictures\Male\gln5201-2-65.2.jpg" />
+    <Content Include="Content\Pictures\Male\gln5201-2-65.3.jpg" />
+    <Content Include="Content\Pictures\Male\gln5201-2-65.4.jpg" />
+    <Content Include="Content\Pictures\Male\gln5201-2-65.5.jpg" />
+    <Content Include="Content\Pictures\Male\gln5201-2-65.6.jpg" />
+    <Content Include="Content\Pictures\Male\gln5201-2-65.jpg" />
+    <Content Include="Content\Pictures\Male\gln5201-2-70.jpg" />
+    <Content Include="Content\Pictures\Male\gln5201-2-70_1-1.jpg" />
+    <Content Include="Content\Pictures\Male\gln5201-2-70_2-1.jpg" />
+    <Content Include="Content\Pictures\Male\gln5201-2-70_3-1.jpg" />
+    <Content Include="Content\Pictures\Male\gln5201-2-70_4-1.jpg" />
+    <Content Include="Content\Pictures\Male\gln5201-2-70_5-1.jpg" />
+    <Content Include="Content\Pictures\Male\gln5201-2-70_6-1.jpg" />
+    <Content Include="Content\Pictures\Male\gln5241-3-551.3.jpg" />
+    <Content Include="Content\Pictures\Male\gln5241-3-551.jpg" />
+    <Content Include="Content\Pictures\Male\gln5399-1-33.1.jpg" />
+    <Content Include="Content\Pictures\Male\gln5399-1-33.2.jpg" />
+    <Content Include="Content\Pictures\Male\gln5399-1-33.3.jpg" />
+    <Content Include="Content\Pictures\Male\gln5399-1-33.4.jpg" />
+    <Content Include="Content\Pictures\Male\gln5399-1-33.5.jpg" />
+    <Content Include="Content\Pictures\Male\gln5399-1-33.6.jpg" />
+    <Content Include="Content\Pictures\Male\gln5399-1-33.jpg" />
+    <Content Include="Content\Pictures\Male\gln5399-7-belye-1.jpg" />
+    <Content Include="Content\Pictures\Male\gln5399-7-belye-2.jpg" />
+    <Content Include="Content\Pictures\Male\gln5399-7-belye-3.jpg" />
+    <Content Include="Content\Pictures\Male\gln5399-7-belye-4.jpg" />
+    <Content Include="Content\Pictures\Male\gln5399-7-belye-5.jpg" />
+    <Content Include="Content\Pictures\Male\gln5399-7-belye-6.jpg" />
+    <Content Include="Content\Pictures\Male\gln5399-7-belye-7.jpg" />
+    <Content Include="Content\Pictures\Male\gln5466-1-19.jpg" />
+    <Content Include="Content\Pictures\Male\gln5466-1-19_1.jpg" />
+    <Content Include="Content\Pictures\Male\gln5466-1-19_2.jpg" />
+    <Content Include="Content\Pictures\Male\gln5466-1-19_3.jpg" />
+    <Content Include="Content\Pictures\Male\gln5466-1-19_4.jpg" />
+    <Content Include="Content\Pictures\Male\gln5466-1-19_5.jpg" />
+    <Content Include="Content\Pictures\Male\gln5466-1-19_6.jpg" />
+    <Content Include="Content\Pictures\Male\gln5466-1-73.jpg" />
+    <Content Include="Content\Pictures\Male\gln5466-1-73_1.jpg" />
+    <Content Include="Content\Pictures\Male\gln5510-1-38.1.jpg" />
+    <Content Include="Content\Pictures\Male\gln5510-1-38.2.jpg" />
+    <Content Include="Content\Pictures\Male\gln5510-1-38.3.jpg" />
+    <Content Include="Content\Pictures\Male\gln5510-1-38.5.jpg" />
+    <Content Include="Content\Pictures\Male\gln5510-1-38.6.jpg" />
+    <Content Include="Content\Pictures\Male\gln5510-1-38.jpg" />
+    <Content Include="Content\Pictures\Male\gln7210-2-45.jpg" />
+    <Content Include="Content\Pictures\Male\gln7210-2-45_1.jpg" />
+    <Content Include="Content\Pictures\Male\gln7210-2-45_2.jpg" />
+    <Content Include="Content\Pictures\Male\gln7210-2-45_3.jpg" />
+    <Content Include="Content\Pictures\Male\gln7210-2-45_4.jpg" />
+    <Content Include="Content\Pictures\Male\gln7210-2-45_5-1.jpg" />
+    <Content Include="Content\Pictures\Male\gln7210-2-45_6.jpg" />
+    <Content Include="Content\Pictures\Male\golvin5399.jpg" />
+    <Content Include="Content\Pictures\Male\golvin5399_1.jpg" />
+    <Content Include="Content\Pictures\Male\golvin5399_2.jpg" />
+    <Content Include="Content\Pictures\Male\golvin5399_3.jpg" />
+    <Content Include="Content\Pictures\Male\golvin5399_4.jpg" />
+    <Content Include="Content\Pictures\Male\golvin5399_5.jpg" />
+    <Content Include="Content\Pictures\Male\golvin5399_6.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0005-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0005-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0005-17-3.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0005-17-4.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0006-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0006-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0006-17-3.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0006-17-4.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0006-17-5.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0006-17-6.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0007-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0007-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0007-17-3.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0007-17-4.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0007-17-5.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0009-16-3.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0009-16-4.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0009-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0009-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0009-17-4.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0009-17-5.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0009-17-6.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0012-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0012-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0012-17-3.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0012-17-4.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0012-17-5.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0019-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0019-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0019-17-3.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0019-17-4.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0019-17-6.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0026-16-2.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0026-16-3.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0028-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0028-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0028-17-3.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0028-17-4.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0028-17-5.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0029-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0029-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0029-17-3.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0029-17-4.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0029-17-5.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0030-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0030-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0030-17-3.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0030-17-4.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0030-17-5.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0030-17-6.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0032-16-3.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0032-16.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0052-16-11.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0058-16-4.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0059-16-4.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0061-16-11.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0061-16.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0062-16-1-1.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0062-16-3.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0064-16-2.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0064-16-3.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0069-16-2.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0070-16-1.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0071-16-1.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0071-16-2.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0310-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0310-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0310-17-3.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0310-17-5.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0310-17-7.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0612-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0612-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0612-17-3.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0612-17-4.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0612-17-5.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0712-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0712-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0712-17-3.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0712-17-4.jpg" />
+    <Content Include="Content\Pictures\Male\m1-0712-17-5.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0001-18-1.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0001-18-2.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0001-18-3.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0001-18-4.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0001-18-5.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0010-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0010-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0010-17-3.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0011-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0011-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0011-17-3.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0011-17-4.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0012-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0012-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0012-17-3.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0012-17-4.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0013-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0013-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0013-17-3.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0014-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0014-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0014-17-4.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0014-17-5.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0014-17-6.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0016-18.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0016-18a.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0016-18aa.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0016-18frs.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0016-18r.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0016-18s.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0024-18.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0024-181.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0024-182.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0024-183.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0024-184.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0026-18.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0026-181.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0026-182.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0026-183.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0026-184.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0027-18.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0027-181.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0027-182.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0027-183.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0027-184.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0028-18.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0028-181.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0028-182.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0028-183.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0028-184.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0029-18.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0029-181.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0029-182.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0029-183.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0029-184-1.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0029-185.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0030-18.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0030-181.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0030-182.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0030-183.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0030-184.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0030-185.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0031-18.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0031-181-1.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0031-182-1.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0031-183-1.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0031-184.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0032-18.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0032-181.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0032-183.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0032-184.jpg" />
+    <Content Include="Content\Pictures\Male\m2-0074-16.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0001-18-1.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0001-18-13.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0001-18-1ds.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0001-18-1fa.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0001-18-1w.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0001-18-1war.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0002-18-1.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0002-18-11.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0002-18-15.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0002-18-19.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0002-18-1efbn.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0002-18-1sf.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0007-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0007-17-11.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0007-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0007-17-3.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0007-17-4.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0011-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0011-17-11.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0011-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0011-17-3.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0011-17-4.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0011-17-5.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0011-18-1.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0011-181f.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0011-18d.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0011-18i.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0011-18uio.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0011-18w.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0013-18-1.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0013-18-12.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0013-18-13.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0013-18-18.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0013-18-1d.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0013-18-1g.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0014-18-1.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0014-18-12.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0014-18-1777.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0014-18-189.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0014-18-1a.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0014-18-1e.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0017-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0017-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0017-17-3.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0017-17-4.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0017-17-5.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0018-18-1.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0018-18-2.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0018-18-3.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0018-18-4.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0018-18-5.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0018-18-7fe.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0019-18-1s.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0019-18-2.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0019-18-3.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0019-18-4s.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0019-18-5.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0019-18-6.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0020-18-7aa.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0021-18.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0021-184.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0021-18c.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0021-18ew.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0021-18s.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0021-18z.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0022-18.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0022-18d.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0022-18de.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0022-18ea.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0022-18r.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0022-18se.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0023-18-1.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0023-18-1d.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0023-18-1fg.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0023-18-1frgrt.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0023-18-1uiop.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0023-18-1uk.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0024-18.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0024-181.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0024-183.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0024-184.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0024-185.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0024-186.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0025-18.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0025-181.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0025-182.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0025-183.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0025-184.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0026-18.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0026-181.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0026-183.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0026-184.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0026-187.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0036-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0036-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0036-17-3.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0036-17-4.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0036-17-5.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0041-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0041-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0041-17-3.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0041-17-4.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0041-17-5.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0042-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0042-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0042-17-3.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0042-17-4.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0042-17-5.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0043-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0043-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0043-17-3.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0043-17-4.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0043-17-5.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0050-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0050-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0050-17-3.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0050-17-4.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0050-17-5.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0057-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0057-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0057-17-3.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0057-17-4.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0057-17.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0061-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0061-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0061-17-3.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0061-17-4.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0061-17-5.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0065-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0065-17-1df.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0065-17-1gh.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0065-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0065-17-23.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0065-17-fgh.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0096-16-2.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0107-16-6.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0107-16-8.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0107-16-9.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0132-16-1.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0136-16-8.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0160-16-1.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0161-16-10.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0161-16-5.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0183-16-1.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0189-16-2.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0190-16-1.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0190-16.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0202-16-2.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0202-16.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0217-16-6.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0223-16-8.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0225-16-8.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0228-16-8.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0229-16-8.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0241-16-1.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0241-16-2.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0241-16-3.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0241-16-5.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0303-18-1.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0303-18-2ff.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0303-18-3.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0303-18-4.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0303-18-5.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0903-171.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0903-1717-2.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0903-1717-3.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0903-1717-4.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0903-1717-5.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0903-1717-6.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0903-1717-7.jpg" />
+    <Content Include="Content\Pictures\Male\m3-0903-1717.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1386306-18.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1386306-181.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1386306-182.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1386306-183.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1386306-184.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1386306-185.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1506-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1506-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1506-17-3.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1506-17-4.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1506-17-5.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1508-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1508-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1508-17-3.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1508-17-4.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1508-17-5.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1509-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1509-17-17.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1509-17-18.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1509-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1509-17-3.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1509-17-4.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1509-17-5.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1511-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1511-17-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1511-17-17.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1511-17-2.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1511-17-3.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1511-17-4.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1511-17-5.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1722806-18.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1722806-181.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1722806-182.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1722806-183.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1722806-184.jpg" />
+    <Content Include="Content\Pictures\Male\m3-1722806-185.jpg" />
+    <Content Include="Content\Pictures\Male\m3-2244506-18.jpg" />
+    <Content Include="Content\Pictures\Male\m3-2244506-181.jpg" />
+    <Content Include="Content\Pictures\Male\m3-2244506-182.jpg" />
+    <Content Include="Content\Pictures\Male\m3-2244506-183.jpg" />
+    <Content Include="Content\Pictures\Male\m3-2244506-184.jpg" />
+    <Content Include="Content\Pictures\Male\m3-2244506-187.jpg" />
+    <Content Include="Content\Pictures\Male\m3-2244606-18.jpg" />
+    <Content Include="Content\Pictures\Male\m3-2244606-181.jpg" />
+    <Content Include="Content\Pictures\Male\m3-2244606-182.jpg" />
+    <Content Include="Content\Pictures\Male\m3-2244606-183.jpg" />
+    <Content Include="Content\Pictures\Male\m3-2244606-184.jpg" />
+    <Content Include="Content\Pictures\Male\m3-2244606-185.jpg" />
+    <Content Include="Content\Pictures\Male\m3-2251716-18.jpg" />
+    <Content Include="Content\Pictures\Male\m3-2251716-182.jpg" />
+    <Content Include="Content\Pictures\Male\m3-2251716-183.jpg" />
+    <Content Include="Content\Pictures\Male\m3-2251716-184.jpg" />
+    <Content Include="Content\Pictures\Male\m3-2251716-185.jpg" />
+    <Content Include="Content\Pictures\Male\m3-2260806-18.jpg" />
+    <Content Include="Content\Pictures\Male\m3-2260806-181.jpg" />
+    <Content Include="Content\Pictures\Male\m3-2260806-182.jpg" />
+    <Content Include="Content\Pictures\Male\m3-2260806-183.jpg" />
+    <Content Include="Content\Pictures\Male\m3-2260806-184.jpg" />
+    <Content Include="Content\Pictures\Male\m3-2260806-185.jpg" />
+    <Content Include="Content\Pictures\Male\m3-5503606-18.jpg" />
+    <Content Include="Content\Pictures\Male\m3-5503606-181.jpg" />
+    <Content Include="Content\Pictures\Male\m3-5503606-182.jpg" />
+    <Content Include="Content\Pictures\Male\m3-5503606-183.jpg" />
+    <Content Include="Content\Pictures\Male\m3-5503606-184.jpg" />
+    <Content Include="Content\Pictures\Male\m3-5503606-185.jpg" />
+    <Content Include="Content\Pictures\Male\Rondo-m3-0220-16-4.jpg" />
+    <Content Include="Content\Pictures\Male\Rondo-m3-0220-16-7.jpg" />
+    <Content Include="Content\Pictures\Male\Rondo-m3-0221-16-3.jpg" />
+    <Content Include="Content\Pictures\Male\ross511blue.2.jpg" />
+    <Content Include="Content\Pictures\Male\ross511blue.jpg" />
+    <Content Include="Content\Pictures\Male\slipony_belye-1.jpg" />
+    <Content Include="Content\Pictures\Male\slipony_belye-2.jpg" />
+    <Content Include="Content\Pictures\Male\slipony_belye-3.jpg" />
+    <Content Include="Content\Pictures\Male\slipony_belye-4.jpg" />
+    <Content Include="Content\Pictures\Male\slipony_belye-5.jpg" />
+    <Content Include="Content\Pictures\Male\slipony_belye-6.jpg" />
+    <Content Include="Content\Pictures\Male\slipony_belye-7.jpg" />
+    <Content Include="Content\Pictures\Male\Techlite-750-1.jpg" />
+    <Content Include="Content\Pictures\Male\visazh508.3.jpg" />
+    <Content Include="Content\Pictures\Male\vizash367-3.3.jpg" />
+    <Content Include="Content\Pictures\Male\vizash367-3.jpg" />
+    <Content Include="Content\Pictures\Male\w1-0017-17-1.jpg" />
+    <Content Include="Content\Pictures\Male\w1-0017-17-3.jpg" />
+    <Content Include="Content\Pictures\Male\w1-0017-17-4.jpg" />
+    <Content Include="Content\Pictures\Male\w1-0017-17-5.jpg" />
+    <Content Include="Content\Pictures\Male\w1-0017-17-6.jpg" />
+    <Content Include="Content\style.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\Amaranth-Bold.svg" />
+    <Content Include="fonts\Amaranth-Regular.svg" />
+    <Content Include="fonts\demo.html" />
+    <Content Include="fonts\Lato-Regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\easing.js" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\jquery.etalage.min.js" />
+    <Content Include="fonts\Amaranth-Bold.eot" />
+    <Content Include="fonts\Amaranth-Bold.ttf" />
+    <Content Include="fonts\Amaranth-Bold.woff" />
+    <Content Include="fonts\Amaranth-Bold.woff2" />
+    <Content Include="fonts\Amaranth-Regular.eot" />
+    <Content Include="fonts\Amaranth-Regular.ttf" />
+    <Content Include="fonts\Amaranth-Regular.woff" />
+    <Content Include="fonts\Amaranth-Regular.woff2" />
+    <Content Include="fonts\Lato-Regular.eot" />
+    <Content Include="fonts\Lato-Regular.ttf" />
+    <Content Include="fonts\Lato-Regular.woff" />
+    <Content Include="fonts\Lato-Regular.woff2" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquery.wmuSlider.js" />
+    <Content Include="Scripts\megamenu.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\move-top.js" />
+    <Content Include="Scripts\owl.carousel.js" />
+    <Content Include="Scripts\simpleCart.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Categories\Create.cshtml" />
+    <Content Include="Views\Categories\Delete.cshtml" />
+    <Content Include="Views\Categories\Details.cshtml" />
+    <Content Include="Views\Categories\Edit.cshtml" />
+    <Content Include="Views\Categories\Index.cshtml" />
+    <Content Include="Views\Colors\Create.cshtml" />
+    <Content Include="Views\Colors\Delete.cshtml" />
+    <Content Include="Views\Colors\Details.cshtml" />
+    <Content Include="Views\Colors\Edit.cshtml" />
+    <Content Include="Views\Colors\Index.cshtml" />
+    <Content Include="Views\Customers\Create.cshtml" />
+    <Content Include="Views\Customers\Delete.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Edit.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\ForWhoms\Create.cshtml" />
+    <Content Include="Views\ForWhoms\Delete.cshtml" />
+    <Content Include="Views\ForWhoms\Details.cshtml" />
+    <Content Include="Views\ForWhoms\Edit.cshtml" />
+    <Content Include="Views\ForWhoms\Index.cshtml" />
+    <Content Include="Views\Matherials\Create.cshtml" />
+    <Content Include="Views\Matherials\Delete.cshtml" />
+    <Content Include="Views\Matherials\Details.cshtml" />
+    <Content Include="Views\Matherials\Edit.cshtml" />
+    <Content Include="Views\Matherials\Index.cshtml" />
+    <Content Include="Views\OrderProducts\Create.cshtml" />
+    <Content Include="Views\OrderProducts\Delete.cshtml" />
+    <Content Include="Views\OrderProducts\Details.cshtml" />
+    <Content Include="Views\OrderProducts\Edit.cshtml" />
+    <Content Include="Views\OrderProducts\Index.cshtml" />
+    <Content Include="Views\Orders\Create.cshtml" />
+    <Content Include="Views\Orders\Delete.cshtml" />
+    <Content Include="Views\Orders\Details.cshtml" />
+    <Content Include="Views\Orders\Edit.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="Views\Producers\Create.cshtml" />
+    <Content Include="Views\Producers\Delete.cshtml" />
+    <Content Include="Views\Producers\Details.cshtml" />
+    <Content Include="Views\Producers\Edit.cshtml" />
+    <Content Include="Views\Producers\Index.cshtml" />
+    <Content Include="Views\Products\Create.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\ProductsDescriptions\Create.cshtml" />
+    <Content Include="Views\ProductsDescriptions\Delete.cshtml" />
+    <Content Include="Views\ProductsDescriptions\Details.cshtml" />
+    <Content Include="Views\ProductsDescriptions\Edit.cshtml" />
+    <Content Include="Views\ProductsDescriptions\Index.cshtml" />
+    <Content Include="Views\ProductsInfoes\Create.cshtml" />
+    <Content Include="Views\ProductsInfoes\Delete.cshtml" />
+    <Content Include="Views\ProductsInfoes\Details.cshtml" />
+    <Content Include="Views\ProductsInfoes\Edit.cshtml" />
+    <Content Include="Views\ProductsInfoes\Index.cshtml" />
+    <Content Include="Views\ProductsPictures\Create.cshtml" />
+    <Content Include="Views\ProductsPictures\Delete.cshtml" />
+    <Content Include="Views\ProductsPictures\Details.cshtml" />
+    <Content Include="Views\ProductsPictures\Edit.cshtml" />
+    <Content Include="Views\ProductsPictures\Index.cshtml" />
+    <Content Include="Views\Seasons\Create.cshtml" />
+    <Content Include="Views\Seasons\Delete.cshtml" />
+    <Content Include="Views\Seasons\Details.cshtml" />
+    <Content Include="Views\Seasons\Edit.cshtml" />
+    <Content Include="Views\Seasons\Index.cshtml" />
+    <Content Include="Views\UserComments\Create.cshtml" />
+    <Content Include="Views\UserComments\Delete.cshtml" />
+    <Content Include="Views\UserComments\Details.cshtml" />
+    <Content Include="Views\UserComments\Edit.cshtml" />
+    <Content Include="Views\UserComments\Index.cshtml" />
+    <Content Include="Views\UsersAddresses\Create.cshtml" />
+    <Content Include="Views\UsersAddresses\Delete.cshtml" />
+    <Content Include="Views\UsersAddresses\Details.cshtml" />
+    <Content Include="Views\UsersAddresses\Edit.cshtml" />
+    <Content Include="Views\UsersAddresses\Index.cshtml" />
+    <Content Include="Views\UsersInfoes\Create.cshtml" />
+    <Content Include="Views\UsersInfoes\Delete.cshtml" />
+    <Content Include="Views\UsersInfoes\Details.cshtml" />
+    <Content Include="Views\UsersInfoes\Edit.cshtml" />
+    <Content Include="Views\UsersInfoes\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shoes\Create.cshtml" />
+    <Content Include="Views\Shoes\Delete.cshtml" />
+    <Content Include="Views\Shoes\Details.cshtml" />
+    <Content Include="Views\Shoes\Edit.cshtml" />
+    <Content Include="Views\Shoes\Index.cshtml" />
+    <Content Include="Views\AdminProducts\Create.cshtml" />
+    <Content Include="Views\AdminProducts\Delete.cshtml" />
+    <Content Include="Views\AdminProducts\Details.cshtml" />
+    <Content Include="Views\AdminProducts\Edit.cshtml" />
+    <Content Include="Views\AdminProducts\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Default\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201810091736274_ProblemWithPictures.resx">
+      <DependentUpon>201810091736274_ProblemWithPictures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810091745088_SecondProblemWithPictures.resx">
+      <DependentUpon>201810091745088_SecondProblemWithPictures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810120740359_ChangeContext.resx">
+      <DependentUpon>201810120740359_ChangeContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810121842347_ChangeViewModel-id-Name.resx">
+      <DependentUpon>201810121842347_ChangeViewModel-id-Name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810122146065_Add-id-forTable-ProductSizes.resx">
+      <DependentUpon>201810122146065_Add-id-forTable-ProductSizes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810140819049_141018.resx">
+      <DependentUpon>201810140819049_141018.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810141715385_RemoveOnUpdateOnDelete.resx">
+      <DependentUpon>201810141715385_RemoveOnUpdateOnDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810142117188_Change_DB_Rows_UA_Eng.resx">
+      <DependentUpon>201810142117188_Change_DB_Rows_UA_Eng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810142153390_ChangeTableDBAddProdInfoinProducts.resx">
+      <DependentUpon>201810142153390_ChangeTableDBAddProdInfoinProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810142210458_ChangeTableProd.resx">
+      <DependentUpon>201810142210458_ChangeTableProd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810142225302_ProductInfoId.resx">
+      <DependentUpon>201810142225302_ProductInfoId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810142235435_DeleteIdProductInfoFromProduct.resx">
+      <DependentUpon>201810142235435_DeleteIdProductInfoFromProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810142311582_SetIdentityTableProduct.resx">
+      <DependentUpon>201810142311582_SetIdentityTableProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810151015093_DatabaseGeneratedOptionNone.resx">
+      <DependentUpon>201810151015093_DatabaseGeneratedOptionNone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810151024267_ChangesINObuvkaContext.resx">
+      <DependentUpon>201810151024267_ChangesINObuvkaContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810151032434_ChangesSeasons.resx">
+      <DependentUpon>201810151032434_ChangesSeasons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810161314105_161018.resx">
+      <DependentUpon>201810161314105_161018.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810161533111_54454545.resx">
+      <DependentUpon>201810161533111_54454545.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810161723128_542112.resx">
+      <DependentUpon>201810161723128_542112.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1197</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1197/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

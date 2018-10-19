@@ -1,0 +1,77 @@
+﻿@model IEnumerable<ObuvkaStore.Models.EntityModels.Orders>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Customers.e_mail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderProducts.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsersAddress.country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.orderDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.deliveryCompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.paymentMethod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.orderStatus)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customers.e_mail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderProducts.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsersAddress.country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.orderDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.deliveryCompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.paymentMethod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.orderStatus)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

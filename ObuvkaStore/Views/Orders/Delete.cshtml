@@ -1,0 +1,88 @@
+﻿@model ObuvkaStore.Models.EntityModels.Orders
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Orders</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Customers.e_mail)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Customers.e_mail)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.OrderProducts.id)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.OrderProducts.id)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.UsersAddress.country)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.UsersAddress.country)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.orderDate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.orderDate)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.deliveryCompanyName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.deliveryCompanyName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.paymentMethod)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.paymentMethod)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.orderStatus)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.orderStatus)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

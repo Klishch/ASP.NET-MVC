@@ -1,0 +1,82 @@
+﻿@model ObuvkaStore.Models.EntityModels.UsersAddress
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>UsersAddress</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.country)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.country)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.region)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.region)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.city)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.city)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.street)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.street)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.homeNumb)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.homeNumb)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.flatNumb)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.flatNumb)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.zipCode)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.zipCode)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

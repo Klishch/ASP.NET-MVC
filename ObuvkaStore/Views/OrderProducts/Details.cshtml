@@ -1,0 +1,66 @@
+﻿@model ObuvkaStore.Models.EntityModels.OrderProducts
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>OrderProducts</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Products.Name_ua)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Products.Name_ua)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.idOrder)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.idOrder)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.count)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.count)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.discount)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.discount)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.total)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.total)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

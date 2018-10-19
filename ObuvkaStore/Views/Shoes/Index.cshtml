@@ -1,0 +1,138 @@
+﻿@model ObuvkaStore.Models.Pageing.IndexViewModel
+@using ObuvkaStore.Helpers
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+
+    @using (Html.BeginForm("Index", "Shoes", FormMethod.Get))
+    {
+    <div class="col-md-3">
+        <div class="single-bottom">
+            <h5>Категории</h5>
+            <ul>
+                @foreach (var item in Model.AllCategories)
+                {
+                    <li>
+                        <input type="checkbox" id="category_@item.id" value='@item.category_name' name="category">
+                        <label for="category_@item.id"><span></span>@item.category_name</label>
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="single-bottom">
+            <h5>Сезон</h5>
+            <ul>
+                @foreach (var item in Model.AllSeasons)
+                {
+                    <li>
+                        <input type="checkbox" id="season_@item.id" value='@item.season' name="season">
+                        <label for="season_@item.id"><span></span>@item.season</label>
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="single-bottom">
+            <h5>Материал</h5>
+            <ul>
+                @foreach (var item in Model.AllMatherials)
+                {
+                    <li>
+                        <input type="checkbox" id="matherial_@item.id" value='@item.matherial' name="matherial">
+                        <label for="matherial_@item.id"><span></span>@item.matherial</label>
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="single-bottom">
+            <h5>Размер</h5>
+            <ul>
+                @foreach (var item in Model.AllSizes)
+                {
+                    <li>
+                        <input type="checkbox" id="size_@item.id" value='@item.size' name="size">
+                        <label for="size_@item.id"><span></span>@item.size</label>
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="single-bottom">
+            <h5>Цвет</h5>
+            <ul>
+                @foreach (var item in Model.AllColors)
+                {
+                    <li>
+                        <input type="checkbox" id="color_@item.id" value='@item.color_name' name="color">
+                        <label for="color_@item.id"><span></span>@item.color_name</label>
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="col-md-offset-4">
+            <input type="submit" value="Фильтр" class="btn btn-default" />
+        </div>
+    </div>
+    }
+
+    <div class="col-md-9">
+        @foreach (var item in Model.PageingShoes)
+        {
+            <div class="col-md-3 box-in-at">
+                <div class=" grid_box portfolio-wrapper">
+                    <a href='@Url.Action("Details", "Shoes", new { id = item.id })'>
+                        <img src=@Url.Content(item.picture[0].ToString()) class="img-responsive" alt="">
+                        <div class="zoom-icon">
+                            <p class="text-center">@item.name</p>
+                        </div>
+                    </a>
+                </div>
+                <!---->
+                <div class="grid_1 simpleCart_shelfItem">
+                    <a href="#" class="cup item_add"><span class=" item_price">@item.price грн.<i> </i> </span></a>
+                </div>
+                <!---->
+            </div>
+        }
+        <div class="clearfix"> </div>
+        <!----- tabs-box ---->
+    </div>
+    <div class="clearfix"> </div>
+    <div class="col-md-2 col-md-push-6">
+        @*<p>Страница @(Model.PageingShoes.Count() < Model.PageInfo.PageNumber ? 0 : Model.PageInfo.PageNumber) из @Model.PageInfo.TotalPages</p><br />*@
+        <p class="text-center">@Html.PageLinks(Model.PageInfo, page => Url.Action("Index", new { page }))</p>
+    </div>
+    <script>
+    i = 0;
+    var arr = [];
+        $('input[type=checkbox]:checked').each(function () {
+            if ($(this).is(":checked")){
+
+                arr[i++] = $(this).val();
+            }
+            console.log(arr);
+        });
+
+    //var sel = $('input[type=checkbox]:checked').map(function (_, el) {
+    //    return $(el).val();
+    //}).get();
+
+    //$('#display').click(function () {
+    //    var vacancyId = $("#vacancy").val();
+    //    var model = {
+    //        vacancyId: vacancyId
+    //};
+
+        $.ajax({
+            url: '@Url.Action("QuestionBlocks", "Questions")',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(arr),
+            type: 'POST',
+            dataType: 'json',
+            processData: false
+        });
+    </script>
+</div>
+
+
+

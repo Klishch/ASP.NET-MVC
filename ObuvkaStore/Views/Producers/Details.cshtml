@@ -1,0 +1,52 @@
+﻿@model ObuvkaStore.Models.EntityModels.Producers
+
+<div>
+    <h4>Producers</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.producerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.producerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.logo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.logo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.producerCountry_ua)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.producerCountry_ua)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.producerCountry_ru)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.producerCountry_ru)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.producerCountry_eng)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.producerCountry_eng)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

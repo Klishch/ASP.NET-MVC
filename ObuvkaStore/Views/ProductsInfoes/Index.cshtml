@@ -1,0 +1,107 @@
+﻿@model IEnumerable<ObuvkaStore.Models.EntityModels.ProductsInfo>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Categories.category_ua)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Colors.color_ua)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ForWhoms.whom_ua)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Matherials.matherial_ua)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Producers.producerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Products.Name_ua)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductsDescriptions.description_ua)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seasons.season_ua)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserComments.comments)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Size)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.availability)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categories.category_ua)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Colors.color_ua)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ForWhoms.whom_ua)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Matherials.matherial_ua)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producers.producerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Products.Name_ua)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductsDescriptions.description_ua)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seasons.season_ua)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserComments.comments)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Size)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.availability)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

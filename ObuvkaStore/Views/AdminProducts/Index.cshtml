@@ -1,0 +1,127 @@
+﻿@model ObuvkaStore.Models.Pageing.IndexViewModel
+@using ObuvkaStore.Helpers
+@*@model IEnumerable<ObuvkaStore.Models.ViewModels.AdminProducts>*@
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <br />
+    <h3 class="text-center">Список всех товаров</h3>
+    <table class="table" border="1">
+        <tr>
+            <th>
+                @Html.DisplayName("Название")
+            </th>
+            <th>
+                @Html.DisplayName("Картинка")
+            </th>
+            <th>
+                @Html.DisplayName("Цена")
+            </th>
+            <th>
+                @Html.DisplayName("Цвет")
+            </th>
+            <th>
+                @Html.DisplayName("Размер")
+            </th>
+            <th>
+                @Html.DisplayName("Количество")
+            </th>
+            <th>
+                @Html.DisplayName("Наличие")
+            </th>
+            <th>
+                @Html.DisplayName("Для кого")
+            </th>
+            <th>
+                @Html.DisplayName("Категория")
+            </th>
+            <th>
+                @Html.DisplayName("Производитель")
+            </th>
+            <th>
+                @Html.DisplayName("Сезон")
+            </th>
+            <th>
+                @Html.DisplayName("Материал")
+            </th>
+            <th>
+                @Html.DisplayName("Описание")
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.PageingAdminProducts)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @foreach (var pic in item.picture)
+                    {
+                        @Html.DisplayFor(modelItem => pic)
+                        <br />
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.color)
+                </td>
+                <td>
+                    @foreach (var siz in item.Size)
+                    {
+                        @Html.DisplayFor(modelItem => siz)
+                        <br />
+                    }
+                </td>
+                <td>
+                    @foreach (var q in item.quantity)
+                    {
+                        @Html.DisplayFor(modelItem => q)
+                        <br />
+                    }
+                </td>
+                <td>
+                    @(item.availability ? "В наличии" : "Нету")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.forWhom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.producer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.season)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.matherial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.description)
+                </td>
+                <td>
+                    @Html.ActionLink("Редактировать", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Детально", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Удалить", "Delete", new { id = item.id })
+                </td>
+            </tr>
+        }
+    </table>
+    <h5 class="text-right" style="padding-right:30px">@Html.ActionLink("Добавить новый товар", "Create")</h5>
+    <div class="form-inline text-center">
+        <p>Страница @(Model.PageingAdminProducts.Count() < Model.PageInfo.PageNumber ? 0 : Model.PageInfo.PageNumber) из @Model.PageInfo.TotalPages</p><br />
+        <p>@Html.PageLinks(Model.PageInfo, page => Url.Action("Index", new { page }))</p>
+    </div>
+</body>
+</html>

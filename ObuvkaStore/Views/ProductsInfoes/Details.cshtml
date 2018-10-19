@@ -1,0 +1,122 @@
+﻿@model ObuvkaStore.Models.EntityModels.ProductsInfo
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>ProductsInfo</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Categories.category_ua)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Categories.category_ua)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Colors.color_ua)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Colors.color_ua)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ForWhoms.whom_ua)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ForWhoms.whom_ua)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Matherials.matherial_ua)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Matherials.matherial_ua)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Producers.producerName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Producers.producerName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Products.Name_ua)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Products.Name_ua)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ProductsDescriptions.description_ua)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ProductsDescriptions.description_ua)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Seasons.season_ua)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Seasons.season_ua)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.UserComments.comments)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.UserComments.comments)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Size)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Size)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.quantity)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.quantity)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.availability)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.availability)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
